@@ -1,0 +1,36 @@
+<%= form_with(model: location, local: true, data: { controller: "places", action: "google-maps-callback@window->places#initMap", places_latitude: location.latitude, places_longitude: location.longitude }) do |form| %>
+
+  <% if location.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(location.errors.count, "error") %> prohibited this trip from being saved:</h2>
+
+      <ul>
+        <% location.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZBLBqh-Viz6WgKbik4jZePpp3MzUWAAw&libraries=places&callback=initMap" async defer data-turbolinks-eval="false"></script>
+
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.search_field :address, class: 'form-control', data: { target: "places.field", action: "keydown->places#keydown" }%>
+  </div>
+  <div class="p-4">
+    <div data-target="places.map" style="height:400px;width:400px"></div>
+  </div>
+  <div class="field">
+    <%= form.label :latitude %>
+        <%= form.text_field :latitude, class: 'form-control', data: { target: "places.latitude" } %>
+  </div>
+
+  <div class="field">
+    <%= form.label :longitude %>
+        <%= form.text_field :longitude, class: 'form-control', data: { target: "places.longitude" } %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @location.address %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @location.latitude %>
+</p>
+
+<p>
+  <strong>Langitude:</strong>
+  <%= @location.longitude %>
+</p>
+<%#= results = Geocoder.search("172.56.21.89") %>
+<%= Geocoder.search([@location.latitude, @location.longitude]) %>
+
+
+
+<p><%- Geocoder.search([@location.latitude, @location.longitude]).each do |x| %>
+  <%= x.data['display_name'] %>
+<%- end %>
+</p>
+<%= link_to 'Edit', edit_location_path(@location) %> |
+<%= link_to 'Back', locations_path %>

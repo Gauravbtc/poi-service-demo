@@ -1,0 +1,17 @@
+default: &default
+  adapter: postgresql
+  encoding: UTF8
+  pool: 500
+  username: DBUSER
+  password: DBPWD
+  pool: 5
+development:
+  <<: *default
+  host: DBHOST
+  port: 5432
+  database: DBNAME
+test:
+  <<: *default
+  host: DBHOST
+  port: 5432
+  database: DBNAME

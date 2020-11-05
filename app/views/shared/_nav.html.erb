@@ -1,0 +1,24 @@
+<div class= "logo">
+  <h1>POI Service </h1>
+</div>
+
+<%# if current_user %>
+  <ul class="custom-nav nav nav-tabs">
+    <li class="nav-item">
+      <%= link_to "Home", root_path, class: "nav-link"%>
+    </li>
+    <% if current_user.present? %>
+      <li class="nav-item">
+        <%= link_to "Point Of Interest", locations_path, class: "nav-link"  %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Logout", destroy_user_session_path, class: "nav-link", method: :delete  %>
+      </li>
+
+    <% else %>
+      <li class="nav-item">
+        <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+      </li>
+    <% end %>
+  </ul>
+<%# end %>

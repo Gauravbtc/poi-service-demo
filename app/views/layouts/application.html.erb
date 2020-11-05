@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PoiService</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="container">
+      <%= render partial: '/layouts/messages' %>
+      <div class="row">
+        <div class="col-md-12">
+          <%= render "shared/nav" %>
+          <%= yield %>
+        </div>
+      </div>
+   </div>
+  </body>
+</html>
