@@ -1,0 +1,102 @@
+{
+    "examples":{
+      "BrandZaikoUpdateSuccessResponseExample":{
+        "value": {
+          "success": true,
+          "message": "Zaiko Updated",
+          "status_code": 200,
+          "data": {}
+        }
+      },
+      "BrandZaikoUpdateFailureInElasticSearchExample": {
+        "value": {
+          "success": false,
+          "message": "brand code not found in elastic search",
+          "status_code": 404,
+          "data": {
+            "took": 4,
+            "timed_out": false,
+            "total": 0,
+            "updated": 0,
+            "deleted": 0,
+            "batches": 0,
+            "version_conflicts": 0,
+            "noops": 0,
+            "retries": {
+                "bulk": 0,
+                "search": 0
+            },
+            "throttled_millis": 0,
+            "requests_per_second": -1.0,
+            "throttled_until_millis": 0,
+            "failures": []
+            }
+          }
+      },
+      "BrandZaikoUpdateFailureSomethingWentWrongInElasitcSearchExample": {
+        "value": {
+          "success": false,
+          "message": "Something Went wrong in Elastic Search Client",
+          "status_code": 400,
+          "data": "error_message"
+        }
+      },
+      "BrandZaikoUpdateFailureUnpermitedParametersExample": {
+        "value": {
+          "success": false,
+          "message": "found unpermitted parameter: #{parameter_name}",
+          "status_code": 400,
+          "data": {}
+        }
+      },
+      "BrandZaikoUpdateBrandCodeNotFoundExample": {
+        "value": {
+          "success": false,
+          "message": "Couldn't find BrandMaster",
+          "status_code": 404,
+          "data": {}
+        }
+      },
+      "BrandZaikoUpdateParameterMissing": {
+        "value": {
+          "success": false,
+          "message": "Check parameters",
+          "status_code": 422,
+          "data": {}
+        }
+      },
+      "BrandImportedSuccessfully": {
+        "value": {
+          "success": true,
+          "message": "Data Imported",
+          "status_code": 200,
+          "data": {}
+        }
+      },
+      "BrandImportFailure": {
+        "value": {
+          "success": false,
+          "message": "#{error_message}",
+          "status_code": 400,
+          "data": {}
+        }
+      },
+      "BrandParameterMissing": {
+        "value": {
+          "success": false,
+          "message": "#{error message}",
+          "status_code": 422,
+          "data": {}
+        }
+      },
+      "BrandsList": {
+        "value": {
+          "message": "Brands details",
+          "status_code": 200,
+          "data":   [
+                      {"id":9135,"brand_code":"7450","image_url":"/images/original/missing.png","description":null,"brand_name":"HUNCH","furigana":"ハンチ","slug":"hunch","zaiko":null}
+                    ]
+        }
+      }
+    }
+  }

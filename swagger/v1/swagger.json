@@ -1,0 +1,63 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "POI Service API Documentation",
+    "description": "Detailed explanation of ElasticSearch API",
+    "version": "0.1.9"
+  },
+  "securityDefinitions": {
+    "auth_token": {
+      "type": "apiKey",
+      "in": "header",
+      "name": "auth_token",
+      "scopes": {
+        "root": "access all resources"
+      }
+    }
+  },
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "servers": [
+    {
+      "url": "http://localhost:3000/"
+    },
+    {
+      "url": "http://localhost:9200/"
+    },
+    {
+      "url": "https://localhost:9200/"
+    }
+  ],
+  "paths": {
+    "/api/v1/users": {
+      "post": {
+        "summary": "Creates a user.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "username": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      }
+    }
+  }
+}
+
+
+

@@ -1,0 +1,83 @@
+{
+  "UserRegistration": {
+    "post": {
+      "summary": "User Registration",
+      "description": "User can register them self by using this api",
+      "requestBody": {
+          // "$ref": "user_parameters.json#/requestBodies/UserRegistrationRequest"
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+      "responses": {
+        "200": {
+          //"$ref": "brand_responses.json#/responses/BrandZaikoUpdateSuccessfully"
+         },
+         "400": {
+           // "$ref": "brand_responses.json#/responses/BrandZaikoUpdateFailureUnpermitedParameters"
+         },
+         "404": {
+          //  "$ref": "brand_responses.json#/responses/BrandZaikoUpdateBrandCodeNotFound"
+         },
+         "422": {
+          // "$ref": "brand_responses.json#/responses/BrandZaikoUpdateParameterMissing"
+         }
+      }
+    }
+  },
+  "BrandImport": {
+    "post": {
+      "summary": "Brand Import 「It is One time Process」",
+      "description": "We are going to import 「Brand＿Master」 from prismatix brand api",
+      "produces": [
+        "application/json"
+      ],
+      "consumes": [
+        "multipart/form-data"
+      ],
+      "tags": [
+        "Brand"
+      ],
+      "requestBody": {
+         "$ref": "brand_parameters.json#/requestBodies/BrandImportRequest"
+      },
+      "responses": {
+        "200": {
+          "$ref": "brand_responses.json#/responses/BrandImportedSuccessfully"
+         },
+        "422": {
+          "$ref": "brand_responses.json#/responses/BrandParameterFailure"
+        }
+      }
+    }
+  },
+  "BrandList": {
+    "get": {
+      "summary": "All Brand Lisitng",
+      "description": "Get brands details",
+      "produces": [
+        "application/json"
+      ],
+      "consumes": [
+        "application/json"
+      ],
+      "tags": [
+        "Brand"
+      ],
+      "responses": {
+        "200": {
+          "$ref": "brand_responses.json#/responses/BrandsList"
+        }
+      }
+    }
+  }
+}

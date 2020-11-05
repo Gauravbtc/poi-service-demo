@@ -1,0 +1,15 @@
+{
+  "requestBodies": {
+    "UserRegistrationRequest": {
+      "description": "User Registration",
+      "required": true,
+      "content": {
+        "application/json": {
+          "schema": {
+            "$ref": "user_definations.json#/definitions/UserRegistrationParameters"
+          }
+        }
+      }
+    }
+  }
+ }

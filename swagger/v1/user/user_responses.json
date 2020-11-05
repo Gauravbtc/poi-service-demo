@@ -1,0 +1,118 @@
+{
+    "responses": {
+      "BrandZaikoUpdateSuccessfully": {
+        "description": "Brand zaiko updated",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "brand_definations.json#/definitions/ZaikoUpdateParametersResponse"
+            },
+            "examples": {
+              "200-Success": {
+                "$ref": "brand_examples.json#/examples/BrandZaikoUpdateSuccessResponseExample"
+              },
+              "200(1)-Failure": {
+                "$ref": "brand_examples.json#/examples/BrandZaikoUpdateFailureInElasticSearchExample"
+              },
+              "200(2)-Failure": {
+                "$ref": "brand_examples.json#/examples/BrandZaikoUpdateFailureSomethingWentWrongInElasitcSearchExample"
+              }
+            }
+          }
+        }
+      },
+      "BrandZaikoUpdateFailureUnpermitedParameters": {
+        "description": "Unpermitted parameter in request payload",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "brand_definations.json#/definitions/ZaikoUpdateErrorsParametersResponse"
+            },
+            "examples": {
+              "400-Failure": {
+               "$ref": "brand_examples.json#/examples/BrandZaikoUpdateFailureUnpermitedParametersExample"
+              }
+            }
+          }
+        }
+      },
+      "BrandZaikoUpdateBrandCodeNotFound": {
+        "description": "brand code not found",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "brand_definations.json#/definitions/ZaikoUpdateErrorsParametersResponse"
+            },
+            "examples": {
+              "404-Failure": {
+                "$ref": "brand_examples.json#/examples/BrandZaikoUpdateBrandCodeNotFoundExample"
+              }
+            }
+          }
+         }
+      },
+      "BrandZaikoUpdateParameterMissing": {
+        "description": "Unprocessable Entity",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "brand_definations.json#/definitions/ZaikoUpdateErrorsParametersResponse"
+            },
+            "examples": {
+              "422-Failure": {
+                "$ref": "brand_examples.json#/examples/BrandZaikoUpdateParameterMissing"
+              }
+            }
+          }
+        }
+      },
+      "BrandImportedSuccessfully": {
+        "description": "Brand imported successfully",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "brand_definations.json#/definitions/ImportParametersResponse"
+            },
+            "examples": {
+              "200-Success": {
+                "$ref": "brand_examples.json#/examples/BrandImportedSuccessfully"
+              },
+              "200(1)-Failure": {
+                "$ref": "brand_examples.json#/examples/BrandImportFailure"
+              }
+            }
+          }
+        }
+      },
+      "BrandParameterFailure": {
+        "description": "Unprocessable Entity",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "brand_definations.json#/definitions/ImportParametersResponse"
+            },
+            "examples": {
+              "422-Failure": {
+                "$ref": "brand_examples.json#/examples/BrandParameterMissing"
+              }
+            }
+          }
+        }
+      },
+      "BrandsList": {
+        "description": "Brands List",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "brand_definations.json#/definitions/BrandListResponse"
+            },
+            "examples": {
+              "200-Success": {
+                "$ref": "brand_examples.json#/examples/BrandsList"
+              }
+            }
+          }
+        }
+      }
+    }
+  }

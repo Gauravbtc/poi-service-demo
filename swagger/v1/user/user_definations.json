@@ -1,0 +1,159 @@
+{
+    "definitions":{
+      "UserRegistrationParameters":{
+        "description": "User Registration Parameters",
+        "type":"object",
+        "required":[
+          "email",
+          "password",
+          "password_confirmation"
+        ],
+        "properties":{
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "password_confirmation": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "email": "gauravma@yopmail.com",
+          "password": 12345,
+          "password_confirmation": 12345
+        }
+     },
+      "ZaikoUpdateParametersResponse":{
+        "description": "brand zaiko update response",
+        "type":"object",
+        "required":[
+          "success",
+          "message",
+          "status_code",
+          "data"
+        ],
+        "properties":{
+          "success":{
+            "type":"boolean",
+            "description":" status"
+          },
+          "message":{
+            "type":"string",
+            "description":"Error message for developers."
+          },
+          "status_code":{
+            "type":"integer",
+            "description":"Status code"
+          },
+          "data": {
+            "type": "object",
+            "description": "brand object"
+          }
+        }
+      },
+      "ZaikoUpdateErrorsParametersResponse": {
+        "description": "Unpermited Parameters or brand code not found",
+        "type":"object",
+        "required":[
+          "success",
+          "message",
+          "status_code"
+        ],
+        "properties":{
+          "success":{
+            "type":"boolean",
+            "description":" status"
+          },
+          "message":{
+            "type":"string",
+            "description":"Error message for developers."
+          },
+          "status_code":{
+            "type":"integer",
+            "description":"Status code"
+          },
+          "data": {
+            "type": "object",
+            "description": "Error details"
+          }
+        }
+      },
+      "ImportParametersResponse": {
+        "description": "File upload parameters response",
+        "type":"object",
+        "required":[
+          "success",
+          "message",
+          "status_code"
+        ],
+        "properties":{
+          "success":{
+            "type":"boolean",
+            "description":" status"
+          },
+          "message":{
+            "type":"string",
+            "description":"Error message for developers."
+          },
+          "status_code":{
+            "type":"integer",
+            "description":"Status code"
+          }
+        }
+      },
+      "BrandListResponse": {
+        "description": "brand list response",
+        "type":"object",
+        "required":[
+          "message",
+          "status_code",
+          "data"
+        ],
+        "properties":{
+          "message":{
+            "type":"string",
+            "description":"Error message for developers."
+          },
+          "status_code":{
+            "type":"integer",
+            "description":"Status code"
+          },
+          "data": {
+            "type": "object",
+            "properties": {
+              "brand_code": {
+                "type": "string",
+                "description": "brand_code"
+              },
+              "brand_name": {
+                "type": "string",
+                "description": "brand name"
+              },
+              "furigana": {
+                "type": "string",
+                "description": "furigana"
+              },
+              "zaiko": {
+                "type": "integer",
+                "description": "zaiko for brand"
+              },
+              "image_url": {
+                "type": "string",
+                "description": "brand image url"
+              },
+              "slug": {
+                "type": "string",
+                "description": "slug for brand"
+              },
+              "description": {
+                "type": "string",
+                "description": "description for brand"
+              }
+            }
+          }
+        }
+      }
+   }
+ }
