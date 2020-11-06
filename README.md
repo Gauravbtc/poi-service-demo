@@ -2,6 +2,11 @@
 
 POI Service is a web application which is used to display Points of Interest (locations in a map), and then allow the creation of routes that connect all or a set of those points.
 
+By using this application user can register them self create there point of interest. User can select their favorite point of interest create routes based on it.
+
+The application contains various gems like geocoder for creating  Point of interest and using google direction API for generating map routes.
+
+
 ## Pre Requirements
 
 Ruby : 2.7.2
