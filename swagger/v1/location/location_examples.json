@@ -46,6 +46,174 @@
               "updated_at": "2020-11-04T05:04:19.539Z"
           }
         }
+      },
+      "LocationDelete": {
+        "value": {
+          "success": true,
+          "message": "Locations deleted successfully",
+          "data": {}
+        }
+      },
+      "LocationCreate": {
+        "value": {
+        "success": true,
+        "message": "Locations created",
+        "data": {
+            "id": 6,
+            "address": "Lala garden",
+            "latitude": 36.0604105,
+            "longitude": 140.1224959196333,
+            "user_id": 1,
+            "created_at": "2020-11-05T03:42:16.647Z",
+            "updated_at": "2020-11-05T03:42:16.647Z"
+          }
+        }
+      },
+      "LocationUpdate": {
+        "value": {
+        "success": true,
+        "message": "Locations updated",
+        "data": {
+            "id": 6,
+            "address": "doho park",
+            "latitude": 36.0604105,
+            "longitude": 140.1224959196333,
+            "user_id": 1,
+            "created_at": "2020-11-05T03:42:16.647Z",
+            "updated_at": "2020-11-05T03:42:16.647Z"
+          }
+        }
+      },
+      "RouteCreate": {
+        "value": {
+          "success": true,
+          "message": "Routes details",
+          "data": [
+            {
+              "route": [
+                  {
+                      "distance": {
+                          "text": "3.7 km",
+                          "value": 3687
+                      },
+                      "duration": {
+                          "text": "10 mins",
+                          "value": 591
+                      },
+                      "end_address": "Japan, 〒305-0051 Ibaraki, Tsukuba, Ninomiya, 2-chōme−２０−８",
+                      "end_location": {
+                          "lat": 36.0600652,
+                          "lng": 140.1201784
+                      },
+                      "start_address": "278-1 Onozaki, Tsukuba, Ibaraki 305-0034, Japan",
+                      "start_location": {
+                          "lat": 36.073741,
+                          "lng": 140.1034425
+                      },
+                      "steps": [
+                          {
+                              "distance": {
+                                  "text": "0.2 km",
+                                  "value": 249
+                              },
+                              "duration": {
+                                  "text": "3 mins",
+                                  "value": 183
+                              },
+                              "end_location": {
+                                  "lat": 36.0749032,
+                                  "lng": 140.1014526
+                              },
+                              "html_instructions": "Head <b>west</b> toward <b>土浦学園線</b>/<wbr/><b>国道408号</b>",
+                              "polyline": {
+                                  "points": "{sd{Eo}bvYCVALCZ?@EPCJABEFMRQXQZGHUXSLGBEBULA?URIHIJSVHPN`@]V"
+                              },
+                              "start_location": {
+                                  "lat": 36.073741,
+                                  "lng": 140.1034425
+                              },
+                              "travel_mode": "DRIVING"
+                          },
+                          {
+                              "distance": {
+                                  "text": "0.2 km",
+                                  "value": 155
+                              },
+                              "duration": {
+                                  "text": "1 min",
+                                  "value": 21
+                              },
+                              "end_location": {
+                                  "lat": 36.0742212,
+                                  "lng": 140.0999488
+                              },
+                              "html_instructions": "Turn <b>left</b> onto <b>土浦学園線</b>/<wbr/><b>国道408号</b>",
+                              "maneuver": "turn-left",
+                              "polyline": {
+                                  "points": "c{d{EaqbvYNb@BFFPnApDZz@"
+                              },
+                              "start_location": {
+                                  "lat": 36.0749032,
+                                  "lng": 140.1014526
+                              },
+                              "travel_mode": "DRIVING"
+                          },
+                          {
+                              "distance": {
+                                  "text": "1.0 km",
+                                  "value": 970
+                              },
+                              "duration": {
+                                  "text": "2 mins",
+                                  "value": 134
+                              },
+                              "end_location": {
+                                  "lat": 36.0785804,
+                                  "lng": 140.1091357
+                              },
+                              "html_instructions": "Make a <b>U-turn</b>",
+                              "maneuver": "uturn-right",
+                              "polyline": {
+                                  "points": "{vd{EugbvYQLSe@cAqCg@{Ak@{AOa@GO}AkEiBeF_BqEg@wAe@oAEMyBeGGOQg@iAaDOc@ACIQEOCIGSAEGQ"
+                              },
+                              "start_location": {
+                                  "lat": 36.0742212,
+                                  "lng": 140.0999488
+                              },
+                              "travel_mode": "DRIVING"
+                          },
+                          {
+                              "distance": {
+                                  "text": "2.3 km",
+                                  "value": 2313
+                              },
+                              "duration": {
+                                  "text": "4 mins",
+                                  "value": 253
+                              },
+                              "end_location": {
+                                  "lat": 36.0600652,
+                                  "lng": 140.1201784
+                              },
+                              "html_instructions": "Turn <b>right</b> at <b>学園西（交差点）</b> onto <b>学園西大通り</b>/<wbr/><b>県道123号</b>/<wbr/><b>県道244号</b> (signs for <b>Joban Expressway</b>)<div style=\"font-size:0.9em\">Continue to follow 学園西大通り/<wbr/>県道244号</div>",
+                              "maneuver": "turn-right",
+                              "polyline": {
+                                  "points": "cre{EcadvYISNINMd@[\\URMz@g@lBkApAy@jJyFvA{@bAm@ROTMvD_CfBiARMRKf@YLIPINKh@]jAs@jEkC`DoBb@YpAy@`KiGrCeBZQjAq@lBaAZOt@[RInAe@r@WHChA]t@Sl@Oj@MZGTG\\GfAQ`AOFArAShBULCPCdBW"
+                              },
+                              "start_location": {
+                                  "lat": 36.0785804,
+                                  "lng": 140.1091357
+                              },
+                              "travel_mode": "DRIVING"
+                          }
+                      ],
+                      "traffic_speed_entry": [],
+                      "via_waypoint": []
+                  }
+              ]
+            }
+          ]
+        }
       }
     }
   }

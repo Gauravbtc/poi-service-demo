@@ -16,13 +16,16 @@
           "required": true
         }
         ],
+      "tags": [
+          "Location"
+        ],
       "responses": {
         "200": {
           "$ref": "location_responses.json#/responses/LocationList"
          }
       }
     }
-  },
+   },
   "LocationShow": {
     "get": {
       "summary": "POI location show",
@@ -30,6 +33,48 @@
       "consumes": [
         "application/js"
       ],
+      "tags": [
+          "Location"
+        ],
+      "parameters": [
+        {
+          "in": "header",
+          "name": "auth_token",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        },
+        {
+          "in": "path",
+          "name": "id",
+          "schema": {
+            "type": "integer"
+          },
+          "required": true,
+          "description": "location_id"
+         }
+        ],
+      "tags": [
+          "Location"
+        ],
+      "responses": {
+        "200": {
+          "$ref": "location_responses.json#/responses/LocationShow"
+         }
+      }
+    }
+   },
+  "LocationDelete": {
+    "delete": {
+      "summary": "POI location delete",
+      "produces": ["application/json"],
+      "consumes": [
+        "application/js"
+      ],
+      "tags": [
+          "Location"
+        ],
       "parameters": [
         {
           "in": "header",
@@ -51,15 +96,248 @@
         ],
       "responses": {
         "200": {
-          "$ref": "location_responses.json#/responses/LocationShow"
+          "$ref": "location_responses.json#/responses/LocationDelete"
          }
       }
     }
-  },
+   },
+   "LocationCreate": {
+      "post": {
+        "summary": "POI location create",
+        "produces": ["application/json"],
+        "consumes": [
+          "application/js"
+        ],
+        "tags": [
+          "Location"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "auth_token",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+          ],
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "address": {
+                      "type": "string"
+                    },
+                    "user_id": {
+                      "type": "integer"
+                    }
+                  }
+                },
+                "example": {
+                  "location": {
+                    "address": "Lala garden",
+                    "user_id": "1"
+                  }
+                }
+              }
+            }
+          },
+        "responses": {
+          "200": {
+            "$ref": "location_responses.json#/responses/LocationCreate"
+           }
+        }
+     }
+   },
+   "LocationUpdate": {
+    "get": {
+      "summary": "POI location show",
+      "produces": ["application/json"],
+      "consumes": [
+        "application/js"
+      ],
+      "tags": [
+          "Location"
+        ],
+      "parameters": [
+        {
+          "in": "header",
+          "name": "auth_token",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        },
+        {
+          "in": "path",
+          "name": "id",
+          "schema": {
+            "type": "integer"
+          },
+          "required": true,
+          "description": "location_id"
+         }
+        ],
+        "tags": ["Location"],
+        "responses": {
+          "200": {
+            "$ref": "location_responses.json#/responses/LocationShow"
+          }
+        }
+    },
+    "delete": {
+      "summary": "POI location delete",
+      "produces": ["application/json"],
+      "consumes": [
+        "application/js"
+      ],
+      "tags": [
+          "Location"
+        ],
+      "parameters": [
+        {
+          "in": "header",
+          "name": "auth_token",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        },
+        {
+          "in": "path",
+          "name": "id",
+          "schema": {
+            "type": "integer"
+          },
+          "required": true,
+          "description": "location_id"
+         }
+        ],
+      "responses": {
+        "200": {
+          "$ref": "location_responses.json#/responses/LocationDelete"
+         }
+      }
+    },
+    "patch": {
+      "summary": "POI location update",
+      "produces": ["application/json"],
+      "consumes": [
+        "application/js"
+      ],
+      "tags": [
+        "Location"
+      ],
+      "parameters": [
+        {
+          "in": "header",
+          "name": "auth_token",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        },
+        {
+          "in": "path",
+          "name": "id",
+          "schema": {
+            "type": "integer"
+          },
+          "required": true,
+          "description": "location_id"
+         }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "address": {
+                    "type": "string"
+                  },
+                  "user_id": {
+                    "type": "integer"
+                  }
+                }
+              },
+              "example": {
+                "location": {
+                  "address": "doho park",
+                  "user_id": "1"
+                }
+              }
+            }
+          }
+        },
+      "responses": {
+        "200": {
+          "$ref": "location_responses.json#/responses/LocationUpdate"
+        }
+      }
+     }
+    },
+   "RouteCreate": {
+      "post": {
+        "summary": "Create route",
+        "produces": ["application/json"],
+        "consumes": [
+          "application/js"
+        ],
+        "tags": [
+          "Location"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "auth_token",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+          ],
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "locations": {
+                      "type": "array",
+                      "properties": {
+                        "location_ids": {
+                          "type": "integer"
+                        }
+                      }
+                    }
+                  }
+                },
+                "example": {
+                  "locations": [1,2,3]
+                }
+              }
+            }
+          },
+        "responses": {
+          "200": {
+            "$ref": "location_responses.json#/responses/CreateRoute"
+           }
+        }
+     }
+   },
    "Location": {
     "delete": {
       "summary": "User SignOut",
       "description": "User can logout with this api",
+      "tags": [
+          "Location"
+        ],
       "parameters": [
         {
           "in": "header",

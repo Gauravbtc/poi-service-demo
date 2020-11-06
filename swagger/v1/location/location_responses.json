@@ -30,16 +30,61 @@
           }
         }
       },
-       "UserLogoutSucess": {
-        "description": "User Logout responses",
+      "LocationDelete": {
+        "description": "Location show",
         "content": {
           "application/json": {
             "examples": {
-              "200(1)": {
-                "$ref": "user_examples.json#/examples/UserLogoutExample"
+              "200-Success": {
+                "$ref": "location_examples.json#/examples/LocationDelete"
               },
-              "200(2)": {
-                "$ref": "user_examples.json#/examples/UserLogoutFailureExample"
+              "200(1)-Failure": {
+                "$ref": "location_examples.json#/examples/AuthTokenMissing"
+              }
+            }
+          }
+        }
+      },
+      "LocationCreate": {
+        "description": "Location create",
+        "content": {
+          "application/json": {
+            "examples": {
+              "200-Success": {
+                "$ref": "location_examples.json#/examples/LocationCreate"
+              },
+              "200(1)-Failure": {
+                "$ref": "location_examples.json#/examples/AuthTokenMissing"
+              }
+            }
+          }
+        }
+      },
+      "LocationUpdate": {
+        "description": "Location update",
+        "content": {
+          "application/json": {
+            "examples": {
+              "200-Success": {
+                "$ref": "location_examples.json#/examples/LocationUpdate"
+              },
+              "200(1)-Failure": {
+                "$ref": "location_examples.json#/examples/AuthTokenMissing"
+              }
+            }
+          }
+        }
+      },
+      "CreateRoute": {
+        "description": "Create Route based on locations",
+        "content": {
+          "application/json": {
+            "examples": {
+              "200-Success": {
+                "$ref": "location_examples.json#/examples/RouteCreate"
+              },
+              "200(1)-Failure": {
+                "$ref": "location_examples.json#/examples/AuthTokenMissing"
               }
             }
           }

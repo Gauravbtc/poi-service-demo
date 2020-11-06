@@ -1,5 +1,29 @@
 {
     "responses": {
+      "UserRegisterSuccessfully": {
+        "description": "User Registration responses",
+        "content": {
+          "application/json": {
+            "examples": {
+              "200-Success": {
+                "$ref": "user_examples.json#/examples/UserRegistrationSuccessResponseExample"
+              }
+            }
+          }
+        }
+      },
+      "UserRegisterSuccessfullyParameterMissing": {
+        "description": "User Registration responses",
+        "content": {
+          "application/json": {
+            "examples": {
+              "422": {
+                "$ref": "user_examples.json#/examples/UserRegistrationParamterResponseExample"
+              }
+            }
+          }
+        }
+      },
       "UserLoginSuccessfully": {
         "description": "User Login responses",
         "content": {

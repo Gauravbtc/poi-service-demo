@@ -13,7 +13,7 @@ module Api::V1
                         data: user })
       else
         warden.custom_failure!
-        json_response({ success: true,
+        json_response({ success: false,
                         message: "Error occured during registration",
                         data: user.errors })
       end
@@ -24,7 +24,7 @@ module Api::V1
     private
 
     def user_params
-      params.permit(:email, :password, :password_confirmation)
+      params.require(:user).permit(:email, :password, :password_confirmation)
     end
 
     def parameter_missing?(check_parameters = [], parameters = {})

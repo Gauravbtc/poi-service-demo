@@ -12,16 +12,10 @@
         },
       "responses": {
         "200": {
-          //"$ref": "brand_responses.json#/responses/BrandZaikoUpdateSuccessfully"
-         },
-         "400": {
-           // "$ref": "brand_responses.json#/responses/BrandZaikoUpdateFailureUnpermitedParameters"
-         },
-         "404": {
-          //  "$ref": "brand_responses.json#/responses/BrandZaikoUpdateBrandCodeNotFound"
+          "$ref": "user_responses.json#/responses/UserRegisterSuccessfully"
          },
          "422": {
-          // "$ref": "brand_responses.json#/responses/BrandZaikoUpdateParameterMissing"
+           "$ref": "user_responses.json#/responses/UserRegisterSuccessfullyParameterMissing"
          }
       }
     }

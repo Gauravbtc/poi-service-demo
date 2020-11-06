@@ -14,43 +14,8 @@
     }
   ],
   "paths": {
-    "/api/v1/locations": {
-      "post": {
-        "summary": "Creates a user.",
-        "parameters": [
-          {
-            "in": "header",
-            "name": "auth_token",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          }
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "address": {
-                    "type": "string"
-                  },
-                  "user_id": {
-                    "type": "1"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Created"
-          }
-        }
-      }
+    "/api/v1/users": {
+       "$ref": "user/user_path.json#/UserRegistration"
     },
     "/api/v1/users/sign_in": {
        "$ref": "user/user_path.json#/UserLogin"
@@ -61,8 +26,14 @@
     "/api/v1/locations": {
       "$ref": "location/location_path.json#/LocationList"
     },
-    "/api/v1/locations": {
-      "$ref": "location/location_path.json#/LocationShow"
+    "api/v1/locations": {
+      "$ref": "location/location_path.json#/LocationCreate"
+    },
+    "/api/v1/locations/{id}": {
+      "$ref": "location/location_path.json#/LocationUpdate"
+    },
+    "/api/v1/locations/create_route": {
+      "$ref": "location/location_path.json#/RouteCreate"
     }
   }
 }

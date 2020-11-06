@@ -9,20 +9,27 @@
           "password_confirmation"
         ],
         "properties":{
-          "email": {
-            "type": "string"
-          },
-          "password": {
-            "type": "string"
-          },
-          "password_confirmation": {
-            "type": "string"
+          "user": {
+            "type": "object",
+            "properties": {
+              "email": {
+                "type": "string"
+              },
+              "password": {
+                "type": "string"
+              },
+              "password_confirmation": {
+                "type": "string"
+              }
+            }
           }
         },
         "example": {
-          "email": "gauravma@yopmail.com",
-          "password": 12345,
-          "password_confirmation": 12345
+          "user": {
+            "email": "gauravma@yopmail.com",
+            "password": 12345,
+            "password_confirmation": 12345
+          }
         }
       },
       "UserLoginParameters":{
