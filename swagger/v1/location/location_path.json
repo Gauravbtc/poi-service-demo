@@ -1,0 +1,84 @@
+{
+  "LocationList": {
+    "get": {
+      "summary": "POI Location List",
+      "produces": ["application/json"],
+      "consumes": [
+        "application/js"
+      ],
+      "parameters": [
+        {
+          "in": "header",
+          "name": "auth_token",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        }
+        ],
+      "responses": {
+        "200": {
+          "$ref": "location_responses.json#/responses/LocationList"
+         }
+      }
+    }
+  },
+  "LocationShow": {
+    "get": {
+      "summary": "POI location show",
+      "produces": ["application/json"],
+      "consumes": [
+        "application/js"
+      ],
+      "parameters": [
+        {
+          "in": "header",
+          "name": "auth_token",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        },
+        {
+          "in": "path",
+          "name": "id",
+          "schema": {
+            "type": "integer"
+          },
+          "required": true,
+          "description": "location_id"
+         }
+        ],
+      "responses": {
+        "200": {
+          "$ref": "location_responses.json#/responses/LocationShow"
+         }
+      }
+    }
+  },
+   "Location": {
+    "delete": {
+      "summary": "User SignOut",
+      "description": "User can logout with this api",
+      "parameters": [
+        {
+          "in": "header",
+          "name": "auth_token",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        }
+      ],
+      "produces": ["application/json"],
+      "consumes": [
+        "application/js"
+      ],
+      "responses": {
+        "200": {
+           "$ref": "user_responses.json#/responses/UserLogoutSucess"
+         }
+      }
+    }
+  }
+}

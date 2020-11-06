@@ -1,101 +1,41 @@
 {
     "examples":{
-      "BrandZaikoUpdateSuccessResponseExample":{
+      "UserLoginSuccessResponseExample":{
         "value": {
           "success": true,
-          "message": "Zaiko Updated",
-          "status_code": 200,
-          "data": {}
-        }
-      },
-      "BrandZaikoUpdateFailureInElasticSearchExample": {
-        "value": {
-          "success": false,
-          "message": "brand code not found in elastic search",
-          "status_code": 404,
+          "message": "Loigin sucessfully",
           "data": {
-            "took": 4,
-            "timed_out": false,
-            "total": 0,
-            "updated": 0,
-            "deleted": 0,
-            "batches": 0,
-            "version_conflicts": 0,
-            "noops": 0,
-            "retries": {
-                "bulk": 0,
-                "search": 0
-            },
-            "throttled_millis": 0,
-            "requests_per_second": -1.0,
-            "throttled_until_millis": 0,
-            "failures": []
-            }
+            "email": "shiv@yopmail.com",
+            "auth_token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoxfQ.yeoemXdMRl4GoVeO8dP0QPhClBZ41Sl3B8MedanYXMw"
           }
-      },
-      "BrandZaikoUpdateFailureSomethingWentWrongInElasitcSearchExample": {
-        "value": {
-          "success": false,
-          "message": "Something Went wrong in Elastic Search Client",
-          "status_code": 400,
-          "data": "error_message"
         }
       },
-      "BrandZaikoUpdateFailureUnpermitedParametersExample": {
+      "InvalidEmailOrPasswordResponseExample":{
         "value": {
           "success": false,
-          "message": "found unpermitted parameter: #{parameter_name}",
-          "status_code": 400,
+          "message": "Invalid Email or password",
           "data": {}
         }
       },
-      "BrandZaikoUpdateBrandCodeNotFoundExample": {
+      "EmailandPasswordMissingExample":{
         "value": {
           "success": false,
-          "message": "Couldn't find BrandMaster",
-          "status_code": 404,
+          "message": "Email and Password are required",
           "data": {}
         }
       },
-      "BrandZaikoUpdateParameterMissing": {
-        "value": {
-          "success": false,
-          "message": "Check parameters",
-          "status_code": 422,
-          "data": {}
-        }
-      },
-      "BrandImportedSuccessfully": {
+      "UserLogoutExample":{
         "value": {
           "success": true,
-          "message": "Data Imported",
-          "status_code": 200,
+          "message": "Signout sucessfully",
           "data": {}
         }
       },
-      "BrandImportFailure": {
+      "UserLogoutFailureExample":{
         "value": {
           "success": false,
-          "message": "#{error_message}",
-          "status_code": 400,
+          "message": "Auth token is invalid or missing",
           "data": {}
-        }
-      },
-      "BrandParameterMissing": {
-        "value": {
-          "success": false,
-          "message": "#{error message}",
-          "status_code": 422,
-          "data": {}
-        }
-      },
-      "BrandsList": {
-        "value": {
-          "message": "Brands details",
-          "status_code": 200,
-          "data":   [
-                      {"id":9135,"brand_code":"7450","image_url":"/images/original/missing.png","description":null,"brand_name":"HUNCH","furigana":"ハンチ","slug":"hunch","zaiko":null}
-                    ]
         }
       }
     }

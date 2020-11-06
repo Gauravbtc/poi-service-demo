@@ -1,27 +1,30 @@
 {
     "responses": {
-      "UserLoginSuccessfully": {
-        "description": "User Login responses",
+      "LocationList": {
+        "description": "Location lists",
         "content": {
           "application/json": {
             "examples": {
               "200-Success": {
-                "$ref": "user_examples.json#/examples/UserLoginSuccessResponseExample"
+                "$ref": "location_examples.json#/examples/LocationListExample"
               },
               "200(1)-Failure": {
-                "$ref": "user_examples.json#/examples/InvalidEmailOrPasswordResponseExample"
+                "$ref": "location_examples.json#/examples/AuthTokenMissing"
               }
             }
           }
         }
       },
-      "UserLoginFailure": {
-        "description": "User Login responses",
+      "LocationShow": {
+        "description": "Location show",
         "content": {
           "application/json": {
             "examples": {
-              "422": {
-                "$ref": "user_examples.json#/examples/EmailandPasswordMissingExample"
+              "200-Success": {
+                "$ref": "location_examples.json#/examples/LocationShow"
+              },
+              "200(1)-Failure": {
+                "$ref": "location_examples.json#/examples/AuthTokenMissing"
               }
             }
           }

@@ -3,20 +3,12 @@
     "post": {
       "summary": "User Registration",
       "description": "User can register them self by using this api",
+      "produces": ["application/json"],
+      "consumes": [
+        "application/js"
+      ],
       "requestBody": {
-          // "$ref": "user_parameters.json#/requestBodies/UserRegistrationRequest"
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "email": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
-          }
+          "$ref": "user_parameters.json#/requestBodies/UserRegistrationRequest"
         },
       "responses": {
         "200": {
@@ -34,49 +26,49 @@
       }
     }
   },
-  "BrandImport": {
+  "UserLogin": {
     "post": {
-      "summary": "Brand Import 「It is One time Process」",
-      "description": "We are going to import 「Brand＿Master」 from prismatix brand api",
-      "produces": [
-        "application/json"
-      ],
+      "summary": "User SignIn",
+      "description": "User can login with this api",
+      "produces": ["application/json"],
       "consumes": [
-        "multipart/form-data"
-      ],
-      "tags": [
-        "Brand"
+        "application/js"
       ],
       "requestBody": {
-         "$ref": "brand_parameters.json#/requestBodies/BrandImportRequest"
-      },
+          "$ref": "user_parameters.json#/requestBodies/UserLoginRequest"
+        },
       "responses": {
         "200": {
-          "$ref": "brand_responses.json#/responses/BrandImportedSuccessfully"
+           "$ref": "user_responses.json#/responses/UserLoginSuccessfully"
          },
-        "422": {
-          "$ref": "brand_responses.json#/responses/BrandParameterFailure"
-        }
+         "422": {
+          "$ref": "user_responses.json#/responses/UserLoginFailure"
+         }
       }
     }
   },
-  "BrandList": {
-    "get": {
-      "summary": "All Brand Lisitng",
-      "description": "Get brands details",
-      "produces": [
-        "application/json"
+   "UserLogout": {
+    "delete": {
+      "summary": "User SignOut",
+      "description": "User can logout with this api",
+      "parameters": [
+        {
+          "in": "header",
+          "name": "auth_token",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        }
       ],
+      "produces": ["application/json"],
       "consumes": [
-        "application/json"
-      ],
-      "tags": [
-        "Brand"
+        "application/js"
       ],
       "responses": {
         "200": {
-          "$ref": "brand_responses.json#/responses/BrandsList"
-        }
+           "$ref": "user_responses.json#/responses/UserLogoutSucess"
+         }
       }
     }
   }

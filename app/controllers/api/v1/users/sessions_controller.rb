@@ -24,7 +24,7 @@ module Api::V1
     def destroy
       user = User.find_by(auth_token: request.headers['HTTP_AUTH_TOKEN'])
       if request.headers['HTTP_AUTH_TOKEN'].blank? || user.blank?
-        json_response({ success: true,
+        json_response({ success: false,
                         message: "Auth token is invalid or missing",
                         data: {} })
       else
@@ -39,7 +39,7 @@ module Api::V1
 
     def invalid_login_attempt
       warden.custom_failure!
-      json_response({ success: true,
+      json_response({ success: false,
                         message: "Invalid Email or password",
                         data: {} })
     end

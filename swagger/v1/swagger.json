@@ -5,35 +5,28 @@
     "description": "Detailed explanation of ElasticSearch API",
     "version": "0.1.9"
   },
-  "securityDefinitions": {
-    "auth_token": {
-      "type": "apiKey",
-      "in": "header",
-      "name": "auth_token",
-      "scopes": {
-        "root": "access all resources"
-      }
-    }
-  },
   "schemes": [
-    "http",
-    "https"
+    "http"
   ],
   "servers": [
     {
       "url": "http://localhost:3000/"
-    },
-    {
-      "url": "http://localhost:9200/"
-    },
-    {
-      "url": "https://localhost:9200/"
     }
   ],
   "paths": {
-    "/api/v1/users": {
+    "/api/v1/locations": {
       "post": {
         "summary": "Creates a user.",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "auth_token",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
         "requestBody": {
           "required": true,
           "content": {
@@ -41,8 +34,11 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "username": {
+                  "address": {
                     "type": "string"
+                  },
+                  "user_id": {
+                    "type": "1"
                   }
                 }
               }
@@ -55,9 +51,19 @@
           }
         }
       }
+    },
+    "/api/v1/users/sign_in": {
+       "$ref": "user/user_path.json#/UserLogin"
+    },
+    "/api/v1/users/sign_out": {
+      "$ref": "user/user_path.json#/UserLogout"
+    },
+    "/api/v1/locations": {
+      "$ref": "location/location_path.json#/LocationList"
+    },
+    "/api/v1/locations": {
+      "$ref": "location/location_path.json#/LocationShow"
     }
   }
 }
-
-
 
