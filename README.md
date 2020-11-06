@@ -2,13 +2,16 @@
 
 POI Service is a web application which is used to display Points of Interest (locations in a map), and then allow the creation of routes that connect all or a set of those points.
 
-## Project Details
+## Pre Requirements
 
 Ruby : 2.7.2
 
 Rails : 6.0.3
 
 Database: Postgres
+
+Google Map API Key
+
 
 ## Follow below steps to setup your development environment
 
@@ -49,4 +52,20 @@ Step 9: Create a database and run migrations
 ```
 rails db:create
 rails db:migrate
+```
+
+Step 10: Run Rails Server
+```
+rails s
+```
+
+## API Documentation
+
+http://localhost:3000/api-docs/index.html
+
+
+## Run Test Cases 
+
+```
+bundle exec rspec
 ```
