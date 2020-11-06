@@ -76,3 +76,13 @@ bundle exec rails db:migrate -e test
 
 bundle exec rspec
 ```
+
+## Class Diagram
+
+![POI_Class_Diyagram](https://user-images.githubusercontent.com/16643699/98346003-c046ac00-2058-11eb-8026-c5a630c8b85f.png)
+
+## Swagger Document
+
+![swagger](https://user-images.githubusercontent.com/16643699/98345530-21ba4b00-2058-11eb-864f-cf4022b8feee.png)
+
+
