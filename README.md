@@ -72,5 +72,7 @@ http://localhost:3000/api-docs/index.html
 ## Run Test Cases 
 
 ```
+bundle exec rails db:migrate -e test
+
 bundle exec rspec
 ```
