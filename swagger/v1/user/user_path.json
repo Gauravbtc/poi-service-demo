@@ -7,6 +7,7 @@
       "consumes": [
         "application/js"
       ],
+      "tags": ["User"],
       "requestBody": {
           "$ref": "user_parameters.json#/requestBodies/UserRegistrationRequest"
         },
@@ -28,6 +29,7 @@
       "consumes": [
         "application/js"
       ],
+      "tags": ["User"],
       "requestBody": {
           "$ref": "user_parameters.json#/requestBodies/UserLoginRequest"
         },
@@ -45,6 +47,7 @@
     "delete": {
       "summary": "User SignOut",
       "description": "User can logout with this api",
+      "tags": ["User"],
       "parameters": [
         {
           "in": "header",

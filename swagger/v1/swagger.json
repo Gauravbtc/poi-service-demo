@@ -2,7 +2,7 @@
   "openapi": "3.0.0",
   "info": {
     "title": "POI Service API Documentation",
-    "description": "Detailed explanation of ElasticSearch API",
+    "description": "Detailed explanation of POI Service API",
     "version": "0.1.9"
   },
   "schemes": [
