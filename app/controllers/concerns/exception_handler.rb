@@ -1,9 +1,7 @@
 module ExceptionHandler
   # provides the more graceful `included` method
   extend ActiveSupport::Concern
-
   included do
-
     ## pass only permitted Parameters only
     ActionController::Parameters.action_on_unpermitted_parameters = :raise
     # Raised when Active Record cannot find a record by given id or set of ids.

@@ -1,33 +1,20 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  locations:
+    created: "Location created successfully"
+    updated: "Location updated successfully"
+    deleted: "Location deleted successfully"
+    errors: "Error Occured During location %{msg}"
+    show: "Location details"
+    list:  "Location list"
+  routes:
+    not_found: "Your entered location routes are not found"
+    details: "Routes Details"
+  users:
+    registration_done: "Registration done"
+    errors: "Error occured during %{msg}"
+    registration_required_fields: "Email, Password and password confirmations are required"
+    login_success: "Login successfully"
+    invalid_auth_token: "Auth token is invalid or missing"
+    signout_success: "Signout successfully"
+    invalid_login: "invalid Email or Password"
+    required_login: "Email and Password are required"

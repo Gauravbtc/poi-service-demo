@@ -9,17 +9,15 @@ module Api::V1
       user = User.new(user_params)
       if user.save
         json_response({ success: true,
-                        message: "Registration done",
+                        message: I18n.t("users.registration_done"),
                         data: user })
       else
         warden.custom_failure!
         json_response({ success: false,
-                        message: "Error occured during registration",
+                        message: I18n.t("users.errors", msg: "Registration"),
                         data: user.errors })
       end
     end
-
-
 
     private
 
@@ -31,7 +29,7 @@ module Api::V1
       missing_params = []
       missing_params << check_parameters.select { |p| parameters[p].to_s.strip.blank? }
       if missing_params.flatten!.present?
-        raise ArgumentError, "Email, Password and password confirmations are required"
+        raise ArgumentError, I18n.t("users.registration_required_fields")
       end
     end
   end

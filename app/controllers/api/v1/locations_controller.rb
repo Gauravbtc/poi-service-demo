@@ -7,13 +7,11 @@ module Api::V1
 
     def index
       locations = @user.locations
-      json_response({ success: true,
-                      message: "Locations list",
-                      data: locations })
+      location_response(true, I18n.t("locations.list"), locations)
     end
 
     def show
-      json_response({ success: true, message: 'Location details', data: @location })
+      location_response(true, I18n.t("locations.show"), @location)
     end
 
     def create
@@ -21,33 +19,32 @@ module Api::V1
       parameter_missing?(%w[address user_id], location_params)
       location = Location.new(location_params)
       if location.save
-        json_response({ success: true, message: 'Location created', data: location })
+        location_response(true, I18n.t("locations.created"), location)
       else
-        json_response({ success: false, message: 'Error Occured During location create', data: location.errors })
+        location_response(false, I18n.t("locations.errors", msg: "create"), location.errors)
       end
     end
 
     def update
       ## verify user input parameters
-
       parameter_missing?(%w[address user_id], location_params)
       if @location.update(location_params)
-        json_response({ success: true, message: 'Locations updated', data: @location })
+        location_response(true, I18n.t("locations.updated"), @location)
       else
-        json_response({ success: false, message: 'Error Occured During location create', data: @location.errors })
+        location_response(false, I18n.t("locations.errors", msg: "update"), location.errors)
       end
     end
 
     def destroy
       @location.destroy
-      json_response({ success: true, message: 'Locations deleted successfully', data: {} })
+      location_response(true, I18n.t("deleted"), {})
     end
 
     def create_route
      ## verify user input parameters
       parameter_missing?(%w[locations], params)
       success, message , data = RoutesDetails::CreateRoute.new(params[:locations]).create
-      json_response({ success: success, message: message, data: data })
+      location_response(success, message, data)
     end
 
     private
@@ -61,5 +58,8 @@ module Api::V1
       params.require(:location).permit(:address,:user_id)
     end
 
+    def location_response(success, message, data)
+      json_response({ success: success, message: message, data: data })
+    end
   end
 end

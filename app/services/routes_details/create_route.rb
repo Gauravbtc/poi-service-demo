@@ -7,17 +7,17 @@ module RoutesDetails
     end
 
     def create
-      #begin
+      begin
         if @start_location.present? && @end_location.present?
           response = RestClient.get "https://maps.googleapis.com/maps/api/directions/json?#{generate_params}"
           success, message, body  = generate_response(JSON.parse(response.body))
           return success, message , body
         else
-          return false, "Location are not found", nil
+          return false, I18n.t("routes.not_found") , nil
         end
-      #rescue Exception => e
-       #return false, "Somethhing went wrong", e.backtrace
-      #end
+      rescue Exception => e
+       return false, "Somethhing went wrong", e.backtrace
+      end
     end
 
     def find_locations(location_ids)
@@ -31,7 +31,7 @@ module RoutesDetails
         @alternate_route = true if way_waypoints.count > 1
         return start_location, end_location, way_waypoints
       else
-        return false, "NO Routes Founds", nil
+        return false, I18n.t("routes.not_found"), nil
       end
     end
 
@@ -71,9 +71,9 @@ module RoutesDetails
           route_hash["route"] = legs
           map_data << route_hash
         end
-        return true, "Routes details", map_data
+        return true, I18n.t("routes.details"), map_data
       else
-        return false, "NO Routes Founds", nil
+        return false, I18n.t("routes.not_found"), nil
       end
     end
   end

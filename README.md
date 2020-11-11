@@ -4,7 +4,15 @@ POI Service is a web application which is used to display Points of Interest (lo
 
 By using this application user can register them self create there point of interest. User can select their favorite point of interest create routes based on it.
 
-The application contains various gems like geocoder for creating  Point of interest and using google direction API for generating map routes.
+The application contains various gems like geocoder for creating  Point of interest and using google map direction API for generating map routes. Used Rspec gem for testing this application.
+
+## Release Note
+#### Version 1
+  i) Use Rails Internationalization
+
+  ii) Code refactoring
+
+  iii) Exception Handling
 
 
 ## Pre Requirements
@@ -20,12 +28,12 @@ Google Map API Key
 
 ## Follow below steps to setup your development environment
 
-Step 1 : take a clone for this repository 
+Step 1 : take a clone for this repository
 
 ```bash
 https://github.com/Gauravbtc/poi-service-demo.git
 ```
-Step 2 : Go to the project directory 
+Step 2 : Go to the project directory
 
 ```bash
 cd poi-service-demo
@@ -34,21 +42,21 @@ cd poi-service-demo
 Step 3: Install requires RVM for ruby 2.7.2
 
 Step 4: Rename sample_databse.yml to database.yml and put your database
-        credentials     
+        credentials
 
 Step 5: Rename sample_secrets.yml to secrets.yml and place your secerets key and google map api key
 
-Step 6: Do bundle install 
+Step 6: Do bundle install
 ```
 bundle install
 ```
 
-Step 7: Web packer install 
+Step 7: Web packer install
 ```
 rails webpacker:install
 ```
 
-Step 8: Add stimulus package 
+Step 8: Add stimulus package
 ```
 yarn add stimulus
 ```
@@ -69,7 +77,7 @@ rails s
 http://localhost:3000/api-docs/index.html
 
 
-## Run Test Cases 
+## Run Test Cases
 
 ```
 bundle exec rails db:migrate -e test
@@ -84,5 +92,3 @@ bundle exec rspec
 ## Swagger Document
 
 ![swagger](https://user-images.githubusercontent.com/16643699/98345530-21ba4b00-2058-11eb-864f-cf4022b8feee.png)
-
-

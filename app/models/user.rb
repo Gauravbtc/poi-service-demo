@@ -3,7 +3,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-
+  # realtions
+  # one user has has_many Point of interest
   has_many :locations
 
   def login=(login)

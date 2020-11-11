@@ -24,6 +24,8 @@ gem 'rest-client'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'rswag-api'
 gem 'rswag-ui'
+# internationalization
+gem 'i18n'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

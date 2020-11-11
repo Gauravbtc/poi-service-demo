@@ -266,6 +266,7 @@ DEPENDENCIES
   devise
   factory_bot_rails
   geocoder
+  i18n
   jbuilder (~> 2.7)
   jwt
   listen (~> 3.2)

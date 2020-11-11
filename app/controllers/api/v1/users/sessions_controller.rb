@@ -3,7 +3,6 @@ module Api::V1
   class Users::SessionsController < Devise::SessionsController
     include Response
     include ExceptionHandler
-
     skip_before_action :verify_signed_out_user, only: :destroy
 
     def create
@@ -14,7 +13,7 @@ module Api::V1
         resource.update_attributes(auth_token: auth_token)
         user = resource.user_to_json
         json_response({ success: true,
-                        message: "Loigin sucessfully",
+                        message: I18n.t("users.login_success"),
                         data: user })
       else
         invalid_login_attempt
@@ -25,12 +24,12 @@ module Api::V1
       user = User.find_by(auth_token: request.headers['HTTP_AUTH_TOKEN'])
       if request.headers['HTTP_AUTH_TOKEN'].blank? || user.blank?
         json_response({ success: false,
-                        message: "Auth token is invalid or missing",
+                        message: I18n.t("users.invalid_auth_token"),
                         data: {} })
       else
         user.update(auth_token: nil)
         json_response({ success: true,
-                        message: "Signout sucessfully",
+                        message: I18n.t("users.signout_success"),
                         data: {} })
       end
     end
@@ -40,7 +39,7 @@ module Api::V1
     def invalid_login_attempt
       warden.custom_failure!
       json_response({ success: false,
-                        message: "Invalid Email or password",
+                        message: I18n.t("users.invalid_login"),
                         data: {} })
     end
 
@@ -48,7 +47,7 @@ module Api::V1
       missing_params = []
       missing_params << check_parameters.select { |p| parameters[p].to_s.strip.blank? }
       if missing_params.flatten!.present?
-        raise ArgumentError, "Email and Password are required"
+        raise ArgumentError, I18n.t("users.required_login")
       end
     end
   end
