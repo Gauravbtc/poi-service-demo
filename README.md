@@ -6,6 +6,47 @@ By using this application user can register them self create there point of inte
 
 The application contains various gems like geocoder for creating  Point of interest and using google map direction API for generating map routes. Used Rspec gem for testing this application.
 
+## APPROACH
+I used the Agile software development methodology for developing this web application.
+
+#### 1. Discovery & Planning
+
+  I understand the detailed requirements of this application. Identifies third-party API service like google direction API which is used to create routes. Geocoder gem for creating Point of Interest of users. Device gem for User Registration, Login. Rspec gem for test cases and
+  differentiate application into smaller modules like
+
+  **User Module**: Registration, Login, Logout
+
+  **Point Of Interest Module**: Create, Update, Delete User's Point of Interest
+
+  **Routes**: Create Routes between the point of Interest
+
+#### 2. Design
+ Database Design for this application.
+
+**User Module**: Create User table identifies it's fields and  validations
+
+**Point Of Interest**: Create Location table which stores users location address, location latitude and longitude information. Design code structure of this application
+
+#### 3. Development
+**User Module**: Used device gem for users Registration, and Login features. Once the user login with the application unique auth_token is generated for the user and this token is required for the subsequent request. For auth_token creation (JWT) gem.
+
+**Location Module**:
+ Used Geocoder gem for Point of Interest CRUD Operations.
+ Locations address, latitude, longitude information are store in Database
+
+**Routes Module**: Used Google direction API for routes creations.
+  User can select their point of Interest locations and call Routes
+  creation API in response will give details information of routes.
+  Develop Route API service which is used for executing Google Direction API calls based for executing HTTP request call I used Rest Client gem
+
+#### 4. Testing
+  Using Rspec for test case generations.
+
+**Model Test**:
+      it Tests application models validation and methods current system has two models User and Location
+
+**Controller Test**: it tests application Controllers logic with all possible actions. the current system has a Location Controller test.
+
 ## Release Note
 #### Version 1
   i) Use Rails Internationalization
